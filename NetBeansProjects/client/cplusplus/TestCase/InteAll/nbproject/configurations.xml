@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
+      <logicalFolder name="f1" displayName="earth_lv2p" projectFiles="true">
+        <itemPath>earth_lv2p/EarthLvtpHeader.h</itemPath>
+        <itemPath>earth_lv2p/txxt.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="InteLevFP" projectFiles="true">
+        <itemPath>InteLevFP/LevFP_Create.h</itemPath>
+        <itemPath>InteLevFP/LevFP_Drop.h</itemPath>
+        <itemPath>InteLevFP/LevFP_Echo.h</itemPath>
+        <itemPath>InteLevFP/LevFP_Factory.h</itemPath>
+        <itemPath>InteLevFP/LevFP_Insert.h</itemPath>
+        <itemPath>InteLevFP/LevFP_Invoke.h</itemPath>
+        <itemPath>InteLevFP/LevFP_Search.h</itemPath>
+        <itemPath>InteLevFP/LevFP_Update.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="InteLevTh" projectFiles="true">
+        <itemPath>InteLevTh/LevTh_Create.h</itemPath>
+        <itemPath>InteLevTh/LevTh_Drop.h</itemPath>
+        <itemPath>InteLevTh/LevTh_Echo.h</itemPath>
+        <itemPath>InteLevTh/LevTh_Insert.h</itemPath>
+        <itemPath>InteLevTh/LevTh_Invoke.h</itemPath>
+        <itemPath>InteLevTh/LevTh_Search.h</itemPath>
+        <itemPath>InteLevTh/LevTh_Update.h</itemPath>
+      </logicalFolder>
+      <itemPath>lev3_test.h</itemPath>
+      <itemPath>lv4p_test.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
+      <logicalFolder name="f1" displayName="earth_lv2p" projectFiles="true">
+        <itemPath>earth_lv2p/txxt.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="InteLevFP" projectFiles="true">
+        <itemPath>InteLevFP/LevFP_Create.cpp</itemPath>
+        <itemPath>InteLevFP/LevFP_Drop.cpp</itemPath>
+        <itemPath>InteLevFP/LevFP_Echo.cpp</itemPath>
+        <itemPath>InteLevFP/LevFP_Factory.cpp</itemPath>
+        <itemPath>InteLevFP/LevFP_Insert.cpp</itemPath>
+        <itemPath>InteLevFP/LevFP_Invoke.cpp</itemPath>
+        <itemPath>InteLevFP/LevFP_Search.cpp</itemPath>
+        <itemPath>InteLevFP/LevFP_Update.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="InteLevTh" projectFiles="true">
+        <itemPath>InteLevTh/LevTh_Create.cpp</itemPath>
+        <itemPath>InteLevTh/LevTh_Drop.cpp</itemPath>
+        <itemPath>InteLevTh/LevTh_Echo.cpp</itemPath>
+        <itemPath>InteLevTh/LevTh_Insert.cpp</itemPath>
+        <itemPath>InteLevTh/LevTh_Invoke.cpp</itemPath>
+        <itemPath>InteLevTh/LevTh_Search.cpp</itemPath>
+        <itemPath>InteLevTh/LevTh_Update.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>lev3_test.cpp</itemPath>
+      <itemPath>lv4p_test.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles" displayName="资源文件" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="测试文件"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="重要文件"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>../../OSEVClieCPP</pElem>
+            <pElem>../../../../serv_solution</pElem>
+            <pElem>../../../../serv_solution/third_party</pElem>
+            <pElem>../../../../serv_solution/osev_common</pElem>
+          </incDir>
+          <commandLine>-Wno-register</commandLine>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>../../OSEVClieCPP</pElem>
+            <pElem>../../../../serv_solution</pElem>
+            <pElem>../../../../serv_solution/third_party</pElem>
+            <pElem>../../../../serv_solution/osev_common</pElem>
+          </incDir>
+          <commandLine>-Wno-register</commandLine>
+        </ccTool>
+        <linkerTool>
+          <commandLine>../../OSEVClieCPP/dist/Debug/GNU-Linux/libOSEVClieCPP.so ../../../../serv_solution/third_party/packing/libpacking.so</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="InteLevFP/LevFP_Create.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Create.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Drop.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Drop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Echo.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Echo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Factory.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Factory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Insert.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Insert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Invoke.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Search.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Update.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Update.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Create.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Create.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Drop.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Drop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Echo.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Echo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Insert.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Insert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Invoke.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Search.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Update.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Update.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="earth_lv2p/EarthLvtpHeader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="earth_lv2p/txxt.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="earth_lv2p/txxt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lev3_test.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="lev3_test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lv4p_test.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="lv4p_test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="InteLevFP/LevFP_Create.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Create.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Drop.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Drop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Echo.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Echo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Factory.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Factory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Insert.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Insert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Invoke.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Search.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Update.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevFP/LevFP_Update.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Create.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Create.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Drop.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Drop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Echo.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Echo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Insert.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Insert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Invoke.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Search.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Update.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="InteLevTh/LevTh_Update.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="earth_lv2p/EarthLvtpHeader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="earth_lv2p/txxt.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="earth_lv2p/txxt.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lev3_test.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="lev3_test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lv4p_test.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="lv4p_test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,93 @@
+
+#include "commo_header.h"
+#include "kcomm_header.h"
+#include "cqutili.h"
+#include "../conte_resou.h"
+#include "./opera_utili/opera_utili.h"
+
+#include "opera_ehand_ensi.h"
+
+// OR AND
+
+static int hand_or(plan_node_ensi *querpn) {
+    plan_node_ensi *left_chil, *righ_chil;
+    OSEVPF("[FUNC]:hand_or\n");
+    //
+    left_chil = querpn->left_chil;
+    righ_chil = querpn->righ_chil;
+    //
+    OSEVPF("--- create tmpfile64.\n");
+    querpn->resul_set = tmpfile64();
+    if (!querpn->resul_set) {
+        fclose(left_chil->resul_set);
+        fclose(righ_chil->resul_set);
+        return -1;
+    }
+    //
+    if (strcmp(left_chil->cont_name, righ_chil->cont_name)) { // difference source
+        if (cartesi_product_data(querpn->resul_set, left_chil->resul_set, righ_chil->resul_set)) {
+            fclose(left_chil->resul_set);
+            fclose(righ_chil->resul_set);
+            fclose(querpn->resul_set);
+            return -1;
+        }
+    } else { // the same source
+        if (merge_data_obid(querpn->resul_set, left_chil->resul_set, righ_chil->resul_set)) {
+            fclose(left_chil->resul_set);
+            fclose(righ_chil->resul_set);
+            fclose(querpn->resul_set);
+            return -1;
+        }
+    }
+    fclose(left_chil->resul_set);
+    fclose(righ_chil->resul_set);
+    //
+    return 0x00;
+}
+
+static int hand_and(plan_node_ensi *querpn) {
+    plan_node_ensi *left_chil, *righ_chil;
+    OSEVPF("[FUNC]:hand_and\n");
+    //
+    left_chil = querpn->left_chil;
+    righ_chil = querpn->righ_chil;
+    //
+    OSEVPF("--- create tmpfile64.\n");
+    querpn->resul_set = tmpfile64();
+    if (!querpn->resul_set) {
+        fclose(left_chil->resul_set);
+        fclose(righ_chil->resul_set);
+        return -1;
+    }
+    // the same source
+    if (shared_data_obid(querpn->resul_set, left_chil->resul_set, righ_chil->resul_set)) {
+        fclose(left_chil->resul_set);
+        fclose(righ_chil->resul_set);
+        fclose(querpn->resul_set);
+        return -1;
+    }
+    fclose(left_chil->resul_set);
+    fclose(righ_chil->resul_set);
+    //
+    return 0x00;
+}
+
+int hand_opera_set_ensi(plan_node_ensi *querpn) { // OR AND
+    OSEVPF("[FUNC]:hand_opera_set_ensi\n");
+    int hand_valu = 0x00;
+    //
+    switch (OPER_CODE(querpn->acti_oper)) {
+        case OR_OPCO:
+            hand_valu = hand_or(querpn);
+            break;
+        case AND_OPCO:
+            hand_valu = hand_and(querpn);
+            break;
+    }
+
+    //
+    return hand_valu;
+}
+
+//
+

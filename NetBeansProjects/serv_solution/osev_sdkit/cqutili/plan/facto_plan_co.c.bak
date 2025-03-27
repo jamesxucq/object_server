@@ -1,0 +1,115 @@
+
+#include "commo_header.h"
+#include "kcomm_header.h"
+#include "lexic/valtok.h"
+#include "gramm/synta_tree.h"
+#include "quer_plan_co.h"
+#include "field_utili.h"
+
+#include "facto_plan_co.h"
+
+//
+
+static plan_node_co *initi_fconq_plan_co(plan_node_co *querpn, prod_data *sresp, contain *dcont, lev2me **lv2mep) {
+    querpn->acti_oper = INIT_QUERY_ACCO;
+    strcpy(querpn->cont_name, dcont->cont_name);
+    querpn->sresp = sresp;
+    querpn->fires = CREAT_FIELD_RESUL_CO();
+    if (!querpn->fires) return NULL;
+    if (fires_lev2n_type_co(querpn->fires, lv2mep)) {
+        DELET_FIELD_RESUL_CO(querpn->fires);
+        return NULL;
+    }
+    //
+    return ++querpn;
+}
+
+static plan_node_co *final_fconq_plan_co(plan_node_co *querpn, contain **sconp) {
+    querpn->acti_oper = FINAL_QUDRY_ACCO;
+    strcpy(querpn->cont_name, sconp[0x00]->cont_name);
+    //
+    ++sconp;
+    ++querpn;
+    querpn->acti_oper = FINAL_QUDRY_ACCO;
+    strcpy(querpn->cont_name, sconp[0x00]->cont_name);
+    //
+    return ++querpn;
+}
+
+//
+
+int creat_fconq_plan_co(plan_node_co *firspn, prod_data *sresp, contain *dcont, contain **sconp, lev2me **lv2mep, oper_node *synt_head) {
+    plan_node_co *quer_tok;
+    OSEVPF("[FUNC]:initi_fconq_plan_co\n");
+    if (!(quer_tok = initi_fconq_plan_co(firspn, sresp, dcont, lv2mep)))
+        return -1;
+    OSEVPF("open_curso_coup\n");
+    if (!(quer_tok = open_curso_coup(quer_tok, sconp)))
+        return -1;
+    if (!(quer_tok = synt_plan_coup(quer_tok, synt_head, sconp)))
+        return -1;
+    OSEVPF("set_initi_valu_si\n");
+    set_initi_valu_co(firspn, quer_tok - 0x01);
+    OSEVPF("close_curso_coup\n");
+    if (!(quer_tok = close_curso_coup(quer_tok, sconp)))
+        return -1;
+    OSEVPF("final_fconq_plan_co\n");
+    if (!(quer_tok = final_fconq_plan_co(quer_tok, sconp)))
+        return -1;
+    quer_tok->acti_oper = INVA_ACCO;
+    //
+    return 0x00;
+}
+
+//
+
+static plan_node_co *initi_flv2q_plan_co(plan_node_co *querpn, prod_data *sresp, lev2me **lv2mep) {
+    querpn->acti_oper = INIT_QUERY_ACCO;
+    querpn->sresp = sresp;
+    querpn->fires = CREAT_FIELD_RESUL_CO();
+    if (!querpn->fires) return NULL;
+    if (fires_lev2n_type_co(querpn->fires, lv2mep)) {
+        DELET_FIELD_RESUL_CO(querpn->fires);
+        return NULL;
+    }
+    //
+    return ++querpn;
+}
+
+static plan_node_co *final_flv2q_plan_co(plan_node_co *querpn, contain **sconp) {
+    querpn->acti_oper = FINAL_QUDRY_ACCO;
+    strcpy(querpn->cont_name, sconp[0x00]->cont_name);
+    //
+    ++sconp;
+    ++querpn;
+    querpn->acti_oper = FINAL_QUDRY_ACCO;
+    strcpy(querpn->cont_name, sconp[0x00]->cont_name);
+    //
+    return ++querpn;
+}
+
+//
+
+int creat_flv2q_plan_co(plan_node_co *firspn, prod_data *sresp, contain **sconp, lev2me **lv2mep, oper_node *synt_head) {
+    plan_node_co *quer_tok;
+    OSEVPF("[FUNC]:initi_flv2q_plan_co\n");
+    if (!(quer_tok = initi_flv2q_plan_co(firspn, sresp, lv2mep)))
+        return -1;
+    OSEVPF("open_curso_coup\n");
+    if (!(quer_tok = open_curso_coup(quer_tok, sconp)))
+        return -1;
+    if (!(quer_tok = synt_plan_coup(quer_tok, synt_head, sconp)))
+        return -1;
+    OSEVPF("set_initi_valu_si\n");
+    set_initi_valu_co(firspn, quer_tok - 0x01);
+    OSEVPF("close_curso_coup\n");
+    if (!(quer_tok = close_curso_coup(quer_tok, sconp)))
+        return -1;
+    OSEVPF("final_flv2q_plan_co\n");
+    if (!(quer_tok = final_flv2q_plan_co(quer_tok, sconp)))
+        return -1;
+    quer_tok->acti_oper = INVA_ACCO;
+    //
+    return 0x00;
+}
+

@@ -1,0 +1,30 @@
+
+// upload
+
+sudo cp -arf ./osev_obid.h /usr/local/include/
+sudo cp -arf ./osev_reval.h /usr/local/include/
+sudo cp -arf ./strz_utili.h /usr/local/include/
+sudo cp -arf ./osev_datyp.h /usr/local/include/
+sudo cp -arf ./wiredtiger.h /usr/local/include/
+sudo cp -arf ./packing.h /usr/local/include/
+sudo cp -arf ./LVTPDefine.h /usr/local/include/
+
+sudo cp -arf ./libwiredtiger.so.11.3.0 /usr/local/lib/
+sudo cp -arf ./libpacking.so /usr/local/lib/
+sudo cp -arf ./libOSEVClieCPP.so /usr/local/lib/
+ldconfig
+
+//
+mkdir /opt/object_server
+mkdir /opt/object_server/bin
+mkdir /opt/object_server/conf
+mkdir /opt/object_server/logs
+mkdir /opt/object_server/data
+
+//
+cp -arf ./osev_serv_noau /opt/object_server/bin
+cp -arf ./osev_serv_t /opt/object_server/bin
+cp -arf ./osev-cli /opt/object_server/bin
+chmod +x ./osev-cli ./osev_serv_t ./osev_serv_noau
+
+cp -arf ./object_server.xml /opt/object_server/conf

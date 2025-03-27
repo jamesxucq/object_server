@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
+      <logicalFolder name="f1" displayName="finish_cline" projectFiles="true">
+        <itemPath>finish_cline/cline_valid_ite.h</itemPath>
+        <itemPath>finish_cline/parse_cline.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="finish_instru" projectFiles="true">
+        <itemPath>finish_instru/finis_instru.h</itemPath>
+        <itemPath>finish_instru/finis_tolkit.h</itemPath>
+        <itemPath>finish_instru/finish_ite.h</itemPath>
+        <itemPath>finish_instru/instru_utili.h</itemPath>
+        <itemPath>finish_instru/print_strea.h</itemPath>
+        <itemPath>finish_instru/tokit_utili.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="instru_execute" projectFiles="true">
+        <itemPath>instru_execute/execut_instru.h</itemPath>
+        <itemPath>instru_execute/execute_ite.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f8" displayName="osev_common" projectFiles="true">
+        <logicalFolder name="f1" displayName="utility" projectFiles="true">
+          <itemPath>../osev_common/utility/action_hmap.h</itemPath>
+          <itemPath>../osev_common/utility/adler32.h</itemPath>
+          <itemPath>../osev_common/utility/hash_table.h</itemPath>
+          <itemPath>../osev_common/utility/md5.h</itemPath>
+        </logicalFolder>
+        <itemPath>../osev_common/commo_header.h</itemPath>
+        <itemPath>../osev_common/commo_macro.h</itemPath>
+        <itemPath>../osev_common/commo_string.h</itemPath>
+        <itemPath>../osev_common/field_unpack.h</itemPath>
+        <itemPath>../osev_common/file_utili.h</itemPath>
+        <itemPath>../osev_common/lev1_meta.h</itemPath>
+        <itemPath>../osev_common/modoid.h</itemPath>
+        <itemPath>../osev_common/obid.h</itemPath>
+        <itemPath>../osev_common/pamstyl_utili.h</itemPath>
+        <itemPath>../osev_common/parms_style.h</itemPath>
+        <itemPath>../osev_common/stoid.h</itemPath>
+        <itemPath>../osev_common/stri_utili.h</itemPath>
+        <itemPath>../osev_common/xml_utili.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="parse_valida" projectFiles="true">
+        <itemPath>parse_valida/conve_lvikoi.h</itemPath>
+        <itemPath>parse_valida/defaul_objide.h</itemPath>
+        <itemPath>parse_valida/filli_conve.h</itemPath>
+        <itemPath>parse_valida/later_check.h</itemPath>
+        <itemPath>parse_valida/parse_ilevoi.h</itemPath>
+        <itemPath>parse_valida/parse_klevoi.h</itemPath>
+        <itemPath>parse_valida/parse_levivk.h</itemPath>
+        <itemPath>parse_valida/pretr_check.h</itemPath>
+        <itemPath>parse_valida/split_pamvs.h</itemPath>
+        <itemPath>parse_valida/split_space.h</itemPath>
+        <itemPath>parse_valida/valida_ite.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="pretr_instru" projectFiles="true">
+        <itemPath>pretr_instru/chk_invok_parms.h</itemPath>
+        <itemPath>pretr_instru/cont_name_obid.h</itemPath>
+        <itemPath>pretr_instru/conve_utili.h</itemPath>
+        <itemPath>pretr_instru/defau_utili.h</itemPath>
+        <itemPath>pretr_instru/instr_pretr.h</itemPath>
+        <itemPath>pretr_instru/instru.h</itemPath>
+        <itemPath>pretr_instru/post_inner_valu.h</itemPath>
+        <itemPath>pretr_instru/pre_instru_ite.h</itemPath>
+        <itemPath>pretr_instru/repla_inner_valu.h</itemPath>
+        <itemPath>pretr_instru/statu_inner_valu.h</itemPath>
+        <itemPath>pretr_instru/valid_logic.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6" displayName="pretr_prompt" projectFiles="true">
+        <itemPath>pretr_prompt/prompt_ite.h</itemPath>
+        <itemPath>pretr_prompt/prompt_utili.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f9" displayName="third_party" projectFiles="true">
+        <logicalFolder name="f1" displayName="packing" projectFiles="true">
+          <itemPath>../third_party/packing/packing.h</itemPath>
+        </logicalFolder>
+        <itemPath>../third_party/binary_logger.h</itemPath>
+        <itemPath>../third_party/linenoise.h</itemPath>
+        <itemPath>../third_party/logger.h</itemPath>
+        <itemPath>../third_party/third_party.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="tokit_instru" projectFiles="true">
+        <logicalFolder name="f1" displayName="common" projectFiles="true">
+          <itemPath>tokit_instru/common/ccomm_types.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="fmt_lang" projectFiles="true">
+          <itemPath>tokit_instru/fmt_lang/fmt_binoid.h</itemPath>
+          <itemPath>tokit_instru/fmt_lang/fmt_xmlang.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f4" displayName="lvtp_explain" projectFiles="true">
+          <itemPath>tokit_instru/lvtp_explain/explain_ite.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f5" displayName="parse_list" projectFiles="true">
+          <itemPath>tokit_instru/parse_list/klist_ite.h</itemPath>
+          <itemPath>tokit_instru/parse_list/parse_lev1.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f6" displayName="pretty_utili" projectFiles="true">
+          <itemPath>tokit_instru/pretty_utili/pretty_ite.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="trans_lang" projectFiles="true">
+          <itemPath>tokit_instru/trans_lang/filli_clang.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/filli_inline.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/lev1_decla.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/lev1_utili.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/load_conte.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/lv2p_expan.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/lv2p_list.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/parse_expand.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/parse_l12con.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/parse_lv2p_atti.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/seri_leng.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/tran_gcc_cpp.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/trans_utili.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/translate.h</itemPath>
+          <itemPath>tokit_instru/trans_lang/tstri_utili.h</itemPath>
+        </logicalFolder>
+        <itemPath>tokit_instru/execu_tokit_ite.h</itemPath>
+        <itemPath>tokit_instru/explain.h</itemPath>
+        <itemPath>tokit_instru/format.h</itemPath>
+        <itemPath>tokit_instru/key_valu.h</itemPath>
+        <itemPath>tokit_instru/kstri_utili.h</itemPath>
+        <itemPath>tokit_instru/list.h</itemPath>
+        <itemPath>tokit_instru/load.h</itemPath>
+        <itemPath>tokit_instru/pretty.h</itemPath>
+        <itemPath>tokit_instru/save.h</itemPath>
+        <itemPath>tokit_instru/translate.h</itemPath>
+      </logicalFolder>
+      <itemPath>cinstru.h</itemPath>
+      <itemPath>clit_bzl.h</itemPath>
+      <itemPath>clit_macro.h</itemPath>
+      <itemPath>clit_obje.h</itemPath>
+      <itemPath>clit_struct.h</itemPath>
+      <itemPath>connect.h</itemPath>
+      <itemPath>cstatu.h</itemPath>
+      <itemPath>cstri_utili.h</itemPath>
+      <itemPath>debug_funct_sh.h</itemPath>
+      <itemPath>ercod_clit.h</itemPath>
+      <itemPath>options.h</itemPath>
+      <itemPath>osev_clit.h</itemPath>
+      <itemPath>osvp_utili.h</itemPath>
+      <itemPath>parse_resxml.h</itemPath>
+      <itemPath>privi_utili.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
+      <logicalFolder name="f1" displayName="finish_cline" projectFiles="true">
+        <itemPath>finish_cline/cline_valid_ite.c</itemPath>
+        <itemPath>finish_cline/parse_cline.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="finish_instru" projectFiles="true">
+        <itemPath>finish_instru/finis_instru.c</itemPath>
+        <itemPath>finish_instru/finis_tolkit.c</itemPath>
+        <itemPath>finish_instru/finish_ite.c</itemPath>
+        <itemPath>finish_instru/instru_utili.c</itemPath>
+        <itemPath>finish_instru/print_strea.c</itemPath>
+        <itemPath>finish_instru/tokit_utili.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="instru_execute" projectFiles="true">
+        <itemPath>instru_execute/execut_instru.c</itemPath>
+        <itemPath>instru_execute/execute_ite.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f8" displayName="osev_common" projectFiles="true">
+        <logicalFolder name="f1" displayName="utility" projectFiles="true">
+        </logicalFolder>
+        <itemPath>../osev_common/modoid.c</itemPath>
+        <itemPath>../osev_common/obid.c</itemPath>
+        <itemPath>../osev_common/pamstyl_utili.c</itemPath>
+        <itemPath>../osev_common/stoid.c</itemPath>
+        <itemPath>../osev_common/xml_utili.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="parse_valida" projectFiles="true">
+        <itemPath>parse_valida/conve_lvikoi.c</itemPath>
+        <itemPath>parse_valida/filli_conve.c</itemPath>
+        <itemPath>parse_valida/later_check.c</itemPath>
+        <itemPath>parse_valida/parse_ilevoi.c</itemPath>
+        <itemPath>parse_valida/parse_klevoi.c</itemPath>
+        <itemPath>parse_valida/parse_levivk.c</itemPath>
+        <itemPath>parse_valida/pretr_check.c</itemPath>
+        <itemPath>parse_valida/split_pamvs.c</itemPath>
+        <itemPath>parse_valida/split_space.c</itemPath>
+        <itemPath>parse_valida/valida_ite.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="pretr_instru" projectFiles="true">
+        <itemPath>pretr_instru/cont_name_obid.c</itemPath>
+        <itemPath>pretr_instru/conve_utili.c</itemPath>
+        <itemPath>pretr_instru/defau_utili.c</itemPath>
+        <itemPath>pretr_instru/instr_pretr.c</itemPath>
+        <itemPath>pretr_instru/instru.c</itemPath>
+        <itemPath>pretr_instru/post_inner_valu.c</itemPath>
+        <itemPath>pretr_instru/pre_instru_ite.c</itemPath>
+        <itemPath>pretr_instru/repla_inner_valu.c</itemPath>
+        <itemPath>pretr_instru/statu_inner_valu.c</itemPath>
+        <itemPath>pretr_instru/valid_logic.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6" displayName="pretr_prompt" projectFiles="true">
+        <itemPath>pretr_prompt/prompt_ite.c</itemPath>
+        <itemPath>pretr_prompt/prompt_utili.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f9" displayName="third_party" projectFiles="true">
+        <logicalFolder name="f1" displayName="packing" projectFiles="true">
+        </logicalFolder>
+        <itemPath>../third_party/binary_logger.c</itemPath>
+        <itemPath>../third_party/linenoise.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="tokit_instru" projectFiles="true">
+        <logicalFolder name="f1" displayName="common" projectFiles="true">
+          <itemPath>tokit_instru/common/ccomm_types.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f3" displayName="fmt_lang" projectFiles="true">
+          <itemPath>tokit_instru/fmt_lang/fmt_binoid.c</itemPath>
+          <itemPath>tokit_instru/fmt_lang/fmt_xmlang.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f4" displayName="lvtp_explain" projectFiles="true">
+          <itemPath>tokit_instru/lvtp_explain/explain_ite.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f5" displayName="parse_list" projectFiles="true">
+          <itemPath>tokit_instru/parse_list/klist_ite.c</itemPath>
+          <itemPath>tokit_instru/parse_list/parse_lev1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f6" displayName="pretty_utili" projectFiles="true">
+          <itemPath>tokit_instru/pretty_utili/pretty_ite.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="trans_lang" projectFiles="true">
+          <itemPath>tokit_instru/trans_lang/filli_clang.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/lev1_utili.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/load_conte.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/lv2p_expan.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/lv2p_list.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/parse_expand.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/parse_l12con.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/parse_lv2p_atti.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/seri_leng.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/tran_gcc_cpp.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/trans_utili.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/translate.c</itemPath>
+          <itemPath>tokit_instru/trans_lang/tstri_utili.c</itemPath>
+        </logicalFolder>
+        <itemPath>tokit_instru/execu_tokit_ite.c</itemPath>
+        <itemPath>tokit_instru/explain.c</itemPath>
+        <itemPath>tokit_instru/format.c</itemPath>
+        <itemPath>tokit_instru/key_valu.c</itemPath>
+        <itemPath>tokit_instru/kstri_utili.c</itemPath>
+        <itemPath>tokit_instru/list.c</itemPath>
+        <itemPath>tokit_instru/load.c</itemPath>
+        <itemPath>tokit_instru/pretty.c</itemPath>
+        <itemPath>tokit_instru/save.c</itemPath>
+        <itemPath>tokit_instru/translate.c</itemPath>
+      </logicalFolder>
+      <itemPath>cinstru.c</itemPath>
+      <itemPath>clit_bzl.c</itemPath>
+      <itemPath>clit_obje.c</itemPath>
+      <itemPath>clit_struct.c</itemPath>
+      <itemPath>connect.c</itemPath>
+      <itemPath>cstatu.c</itemPath>
+      <itemPath>cstri_utili.c</itemPath>
+      <itemPath>debug_funct_sh.c</itemPath>
+      <itemPath>options.c</itemPath>
+      <itemPath>osev_clit.c</itemPath>
+      <itemPath>osvp_utili.c</itemPath>
+      <itemPath>parse_resxml.c</itemPath>
+      <itemPath>privi_utili.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles" displayName="资源文件" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="测试文件"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="重要文件"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>../../client/clang/osev_clie_clang</pElem>
+            <pElem>../third_party</pElem>
+            <pElem>../osev_common</pElem>
+            <pElem>../stora_engine</pElem>
+            <pElem>../osev_sdkit/storage</pElem>
+          </incDir>
+          <commandLine>-Wall -D_DEBUG -D_OSEV_CLIT -D_LARGEFILE64_SOURCE -D_FILEOFFSET_BITS==64 -fno-strict-aliasing -Wno-maybe-uninitialized -O2</commandLine>
+        </cTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/osev-cli</output>
+          <commandLine>../../client/clang/osev_clie_clang/dist/Debug/GNU-Linux/libosev_clie_clang.a ../third_party/packing/libpacking.a -lpthread /lib/x86_64-linux-gnu/libmbedcrypto.a</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../osev_common/commo_header.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/commo_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/commo_string.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/field_unpack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/file_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/lev1_meta.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/modoid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/modoid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/obid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/obid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/pamstyl_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/pamstyl_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/parms_style.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/stoid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/stoid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/stri_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/utility/action_hmap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../osev_common/utility/adler32.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/utility/hash_table.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../osev_common/utility/md5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/xml_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/xml_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/binary_logger.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../third_party/binary_logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/linenoise.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../third_party/linenoise.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/packing/packing.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/third_party.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cinstru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cinstru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_bzl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="clit_bzl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_obje.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="clit_obje.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_struct.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="clit_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="connect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="connect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cstatu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cstatu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cstri_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cstri_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="debug_funct_sh.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="debug_funct_sh.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ercod_clit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_cline/cline_valid_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_cline/cline_valid_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_cline/parse_cline.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_cline/parse_cline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_instru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_instru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_tolkit.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_tolkit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/finish_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/finish_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/instru_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/instru_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/print_strea.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/print_strea.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/tokit_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/tokit_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instru_execute/execut_instru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="instru_execute/execut_instru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instru_execute/execute_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="instru_execute/execute_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="options.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="options.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_clit.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_clit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osvp_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osvp_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_resxml.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_resxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/conve_lvikoi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/conve_lvikoi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/defaul_objide.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/filli_conve.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/filli_conve.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/later_check.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/later_check.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_ilevoi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_ilevoi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_klevoi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_klevoi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_levivk.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_levivk.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/pretr_check.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/pretr_check.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/split_pamvs.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/split_pamvs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/split_space.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/split_space.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/valida_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/valida_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/chk_invok_parms.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/cont_name_obid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/cont_name_obid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/conve_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/conve_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/defau_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/defau_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/instr_pretr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/instr_pretr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/instru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/instru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/post_inner_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/post_inner_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/pre_instru_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/pre_instru_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/repla_inner_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/repla_inner_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/statu_inner_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/statu_inner_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/valid_logic.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/valid_logic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="privi_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="privi_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/common/ccomm_types.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/common/ccomm_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/execu_tokit_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/execu_tokit_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/explain.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/explain.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_binoid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_binoid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_xmlang.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_xmlang.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/format.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/format.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/key_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/key_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/kstri_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/kstri_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/list.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/load.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/load.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/lvtp_explain/explain_ite.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/lvtp_explain/explain_ite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/klist_ite.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/klist_ite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/parse_lev1.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/parse_lev1.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty_utili/pretty_ite.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty_utili/pretty_ite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/save.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/save.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/filli_clang.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/filli_clang.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/filli_inline.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lev1_decla.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lev1_utili.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lev1_utili.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/load_conte.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/load_conte.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_expan.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_expan.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_list.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_list.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_expand.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_expand.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_l12con.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_l12con.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_lv2p_atti.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_lv2p_atti.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/seri_leng.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/seri_leng.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tran_gcc_cpp.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tran_gcc_cpp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/trans_utili.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/trans_utili.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/translate.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/translate.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tstri_utili.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tstri_utili.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/translate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/translate.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../../client/clang/osev_clie_clang</pElem>
+            <pElem>../third_party</pElem>
+            <pElem>../osev_common</pElem>
+            <pElem>../stora_engine</pElem>
+            <pElem>../osev_sdkit/storage</pElem>
+          </incDir>
+          <commandLine>-Wall -D_OSEV_CLIT -D_LARGEFILE64_SOURCE -D_FILEOFFSET_BITS==64 -fno-strict-aliasing</commandLine>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/osev-cli</output>
+          <commandLine>../../client/clang/osev_clie_clang/dist/Release/GNU-Linux/libosev_clie_clang.a ../third_party/packing/libpacking.a -lpthread /lib/x86_64-linux-gnu/libmbedcrypto.a</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../osev_common/commo_header.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/commo_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/commo_string.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/field_unpack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/file_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/lev1_meta.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/modoid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/modoid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/obid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/obid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/pamstyl_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/pamstyl_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/parms_style.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/stoid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/stoid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/stri_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/utility/action_hmap.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../osev_common/utility/adler32.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/utility/hash_table.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../osev_common/utility/md5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../osev_common/xml_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../osev_common/xml_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/binary_logger.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../third_party/binary_logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/linenoise.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../third_party/linenoise.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/logger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/packing/packing.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/third_party.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cinstru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cinstru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_bzl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="clit_bzl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_obje.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="clit_obje.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="clit_struct.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="clit_struct.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="connect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="connect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cstatu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cstatu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cstri_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="cstri_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="debug_funct_sh.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="debug_funct_sh.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ercod_clit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_cline/cline_valid_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_cline/cline_valid_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_cline/parse_cline.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_cline/parse_cline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_instru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_instru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_tolkit.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/finis_tolkit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/finish_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/finish_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/instru_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/instru_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/print_strea.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/print_strea.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="finish_instru/tokit_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="finish_instru/tokit_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instru_execute/execut_instru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="instru_execute/execut_instru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instru_execute/execute_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="instru_execute/execute_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="options.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="options.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_clit.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_clit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osvp_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osvp_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_resxml.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_resxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/conve_lvikoi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/conve_lvikoi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/defaul_objide.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/filli_conve.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/filli_conve.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/later_check.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/later_check.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_ilevoi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_ilevoi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_klevoi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_klevoi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_levivk.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/parse_levivk.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/pretr_check.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/pretr_check.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/split_pamvs.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/split_pamvs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/split_space.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/split_space.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_valida/valida_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_valida/valida_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/chk_invok_parms.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/cont_name_obid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/cont_name_obid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/conve_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/conve_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/defau_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/defau_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/instr_pretr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/instr_pretr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/instru.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/instru.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/post_inner_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/post_inner_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/pre_instru_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/pre_instru_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/repla_inner_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/repla_inner_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/statu_inner_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/statu_inner_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_instru/valid_logic.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_instru/valid_logic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pretr_prompt/prompt_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="privi_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="privi_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/common/ccomm_types.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/common/ccomm_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/execu_tokit_ite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/execu_tokit_ite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/explain.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/explain.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_binoid.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_binoid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_xmlang.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/fmt_lang/fmt_xmlang.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/format.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/format.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/key_valu.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/key_valu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/kstri_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/kstri_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/list.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/load.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/load.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/lvtp_explain/explain_ite.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/lvtp_explain/explain_ite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/klist_ite.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/klist_ite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/parse_lev1.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/parse_list/parse_lev1.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty_utili/pretty_ite.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/pretty_utili/pretty_ite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/save.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/save.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/filli_clang.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/filli_clang.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/filli_inline.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lev1_decla.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lev1_utili.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lev1_utili.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/load_conte.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/load_conte.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_expan.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_expan.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_list.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/lv2p_list.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_expand.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_expand.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_l12con.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_l12con.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_lv2p_atti.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/parse_lv2p_atti.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/seri_leng.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/seri_leng.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tran_gcc_cpp.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tran_gcc_cpp.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/trans_utili.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/trans_utili.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/translate.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/translate.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tstri_utili.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/trans_lang/tstri_utili.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="tokit_instru/translate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tokit_instru/translate.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

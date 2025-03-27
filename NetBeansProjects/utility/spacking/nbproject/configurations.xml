@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
+      <logicalFolder name="f1" displayName="include" projectFiles="true">
+        <itemPath>../packing/config.h</itemPath>
+        <itemPath>../packing/ctype_inline.h</itemPath>
+        <itemPath>../packing/cur_json.h</itemPath>
+        <itemPath>../packing/error.h</itemPath>
+        <itemPath>../packing/hex.h</itemPath>
+        <itemPath>../packing/intpack_inline.h</itemPath>
+        <itemPath>../packing/iunpak_pack.h</itemPath>
+        <itemPath>../packing/misc.h</itemPath>
+        <itemPath>../packing/misc_inline.h</itemPath>
+        <itemPath>../packing/os_alloc.h</itemPath>
+        <itemPath>../packing/os_errno.h</itemPath>
+        <itemPath>../packing/packing_inline.h</itemPath>
+        <itemPath>../packing/pk_internal.h</itemPath>
+        <itemPath>../packing/unpack_pack.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="jemalloc" projectFiles="true">
+        <itemPath>/../jemalloc/jemalloc.h</itemPath>
+      </logicalFolder>
+      <itemPath>../packing/pack_api.h</itemPath>
+      <itemPath>../packing/pack_stream.h</itemPath>
+      <itemPath>../packing/packing.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
+      <logicalFolder name="f2" displayName="config" projectFiles="true">
+        <itemPath>../packing/config.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="cursor" projectFiles="true">
+        <itemPath>../packing/cur_json.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5" displayName="jemalloc" projectFiles="true">
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="os_common" projectFiles="true">
+        <itemPath>../packing/os_alloc.c</itemPath>
+        <itemPath>../packing/os_errno.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="support" projectFiles="true">
+        <itemPath>../packing/hex.c</itemPath>
+      </logicalFolder>
+      <itemPath>../packing/pack_api.c</itemPath>
+      <itemPath>../packing/pack_item.c</itemPath>
+      <itemPath>../packing/pack_stream.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles" displayName="资源文件" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="测试文件"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="重要文件"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandLine>-DJEMALLOC_NO_DEMANGLE</commandLine>
+        </cTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpacking.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="../packing/config.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/ctype_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/cur_json.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/cur_json.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/error.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/hex.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/hex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/intpack_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/iunpak_pack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/misc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/misc_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/os_alloc.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/os_alloc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/os_errno.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/os_errno.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/pack_api.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/pack_api.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/pack_item.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/pack_stream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/pack_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/packing.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/packing_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/pk_internal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/unpack_pack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="/../jemalloc/jemalloc.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpacking.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="../packing/config.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/ctype_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/cur_json.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/cur_json.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/error.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/hex.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/hex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/intpack_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/iunpak_pack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/misc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/misc_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/os_alloc.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/os_alloc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/os_errno.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/os_errno.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/pack_api.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/pack_api.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/pack_item.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/pack_stream.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../packing/pack_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/packing.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/packing_inline.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/pk_internal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../packing/unpack_pack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="/../jemalloc/jemalloc.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

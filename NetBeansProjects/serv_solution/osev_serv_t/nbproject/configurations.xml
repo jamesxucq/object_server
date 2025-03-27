@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
+      <logicalFolder name="f6" displayName="process" projectFiles="true">
+        <itemPath>process/exceptio.h</itemPath>
+        <itemPath>process/final_base.h</itemPath>
+        <itemPath>process/final_collect.h</itemPath>
+        <itemPath>process/final_constr.h</itemPath>
+        <itemPath>process/final_invoke.h</itemPath>
+        <itemPath>process/final_osev.h</itemPath>
+        <itemPath>process/final_query.h</itemPath>
+        <itemPath>process/finalize.h</itemPath>
+        <itemPath>process/hand_binary.h</itemPath>
+        <itemPath>process/initi_base.h</itemPath>
+        <itemPath>process/initi_collect.h</itemPath>
+        <itemPath>process/initi_constr.h</itemPath>
+        <itemPath>process/initi_invoke.h</itemPath>
+        <itemPath>process/initi_osev.h</itemPath>
+        <itemPath>process/initi_query.h</itemPath>
+        <itemPath>process/initi_utili.h</itemPath>
+        <itemPath>process/initialize.h</itemPath>
+        <itemPath>process/proce_macro.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="third_party" projectFiles="true">
+        <logicalFolder name="f1" displayName="packing" projectFiles="true">
+          <itemPath>../third_party/packing/packing.h</itemPath>
+        </logicalFolder>
+        <itemPath>../third_party/access_log.h</itemPath>
+        <itemPath>../third_party/third_party.h</itemPath>
+      </logicalFolder>
+      <itemPath>debug_funct_os.h</itemPath>
+      <itemPath>epoll_serv.h</itemPath>
+      <itemPath>evd_list.h</itemPath>
+      <itemPath>event.h</itemPath>
+      <itemPath>options.h</itemPath>
+      <itemPath>osev_bzl.h</itemPath>
+      <itemPath>osev_obje.h</itemPath>
+      <itemPath>osev_serv.h</itemPath>
+      <itemPath>osev_utili.h</itemPath>
+      <itemPath>parse_conf.h</itemPath>
+      <itemPath>process_cycle.h</itemPath>
+      <itemPath>sconfig.h</itemPath>
+      <itemPath>seion_utili.h</itemPath>
+      <itemPath>server_macro.h</itemPath>
+      <itemPath>session.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
+      <logicalFolder name="f6" displayName="process" projectFiles="true">
+        <itemPath>process/exceptio.c</itemPath>
+        <itemPath>process/final_base.c</itemPath>
+        <itemPath>process/final_collect.c</itemPath>
+        <itemPath>process/final_constr.c</itemPath>
+        <itemPath>process/final_invoke.c</itemPath>
+        <itemPath>process/final_osev.c</itemPath>
+        <itemPath>process/final_query.c</itemPath>
+        <itemPath>process/finalize.c</itemPath>
+        <itemPath>process/hand_binary.c</itemPath>
+        <itemPath>process/initi_base.c</itemPath>
+        <itemPath>process/initi_collect.c</itemPath>
+        <itemPath>process/initi_constr.c</itemPath>
+        <itemPath>process/initi_invoke.c</itemPath>
+        <itemPath>process/initi_osev.c</itemPath>
+        <itemPath>process/initi_query.c</itemPath>
+        <itemPath>process/initi_utili.c</itemPath>
+        <itemPath>process/initialize.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="third_party" projectFiles="true">
+        <logicalFolder name="f1" displayName="packing" projectFiles="true">
+        </logicalFolder>
+        <itemPath>../third_party/access_log.c</itemPath>
+      </logicalFolder>
+      <itemPath>debug_funct_os.c</itemPath>
+      <itemPath>epoll_serv.c</itemPath>
+      <itemPath>evd_list.c</itemPath>
+      <itemPath>options.c</itemPath>
+      <itemPath>osev_bzl.c</itemPath>
+      <itemPath>osev_obje.c</itemPath>
+      <itemPath>osev_serv.c</itemPath>
+      <itemPath>parse_conf.c</itemPath>
+      <itemPath>process_cycle.c</itemPath>
+      <itemPath>seion_utili.c</itemPath>
+      <itemPath>session.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles" displayName="资源文件" projectFiles="true">
+      <itemPath>dependency</itemPath>
+      <itemPath>note</itemPath>
+      <itemPath>object_server.xml</itemPath>
+      <itemPath>osev_datyp.h</itemPath>
+      <itemPath>osev_obid.h</itemPath>
+      <itemPath>osev_reval.h</itemPath>
+      <itemPath>release</itemPath>
+      <itemPath>strz_utili.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="测试文件"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="重要文件"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>4</developmentMode>
+          <commandlineTool>gcc</commandlineTool>
+          <incDir>
+            <pElem>../osev_sdkit/common</pElem>
+            <pElem>../osev_common</pElem>
+            <pElem>../third_party</pElem>
+            <pElem>../osev_sdkit/requ_interp</pElem>
+            <pElem>../osev_sdkit/chk_privile</pElem>
+            <pElem>../osev_sdkit/quer_contain</pElem>
+            <pElem>../osev_sdkit/run_status</pElem>
+            <pElem>../osev_sdkit/storage</pElem>
+            <pElem>../osev_sdkit/clas_compile</pElem>
+            <pElem>../osev_sdkit/authenize</pElem>
+            <pElem>../osev_sdkit/lvot_conte</pElem>
+            <pElem>../osev_sdkit/obje_invoke</pElem>
+            <pElem>../osev_sdkit/const_entity</pElem>
+            <pElem>../osev_sdkit/base_meta</pElem>
+            <pElem>../stora_engine</pElem>
+          </incDir>
+          <commandLine>-Wall -D_DEBUG -D_OSEV_SERV -D_LARGEFILE64_SOURCE -D_FILEOFFSET_BITS==64 -I/usr/include/libxml2 -fno-strict-aliasing</commandLine>
+        </cTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/osev_serv_t</output>
+          <commandlineTool>gcc</commandlineTool>
+          <commandLine>../osev_sdkit/dist/Debug/GNU-Linux/libosev_sdkit.a ../third_party/packing/libpacking.a -lwiredtiger -lxml2 -lpthread -ldl /lib/x86_64-linux-gnu/libmbedcrypto.a</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../third_party/access_log.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../third_party/access_log.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/packing/packing.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/third_party.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="debug_funct_os.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="debug_funct_os.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dependency" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="epoll_serv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="epoll_serv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="evd_list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="evd_list.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="event.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="note" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="object_server.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="options.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="options.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_bzl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_bzl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_datyp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_obid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_obje.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_obje.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_reval.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_serv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_serv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_conf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_conf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/exceptio.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/exceptio.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_base.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_collect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_collect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_constr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_constr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_invoke.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_osev.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_osev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_query.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_query.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/finalize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/finalize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/hand_binary.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/hand_binary.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_base.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_collect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_collect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_constr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_constr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_invoke.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_osev.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_osev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_query.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_query.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initialize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initialize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/proce_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process_cycle.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process_cycle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="release" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sconfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="seion_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="seion_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="server_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="session.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="session.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="strz_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../osev_sdkit/common</pElem>
+            <pElem>../osev_common</pElem>
+            <pElem>../third_party</pElem>
+            <pElem>../osev_sdkit/requ_interp</pElem>
+            <pElem>../osev_sdkit/chk_privile</pElem>
+            <pElem>../osev_sdkit/quer_contain</pElem>
+            <pElem>../osev_sdkit/run_status</pElem>
+            <pElem>../osev_sdkit/storage</pElem>
+            <pElem>../osev_sdkit/clas_compile</pElem>
+            <pElem>../osev_sdkit/authenize</pElem>
+            <pElem>../osev_sdkit/lvot_conte</pElem>
+            <pElem>../osev_sdkit/obje_invoke</pElem>
+            <pElem>../osev_sdkit/const_entity</pElem>
+            <pElem>../osev_sdkit/base_meta</pElem>
+            <pElem>../stora_engine</pElem>
+          </incDir>
+          <commandLine>-Wall -D_OSEV_SERV -D_LARGEFILE64_SOURCE -D_FILEOFFSET_BITS==64 -Wno-strict-aliasing -I/usr/include/libxml2 -fno-strict-aliasing</commandLine>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <commandLine>../osev_sdkit/dist/Release/GNU-Linux/libosev_sdkit.a ../third_party/packing/libpacking.a -lwiredtiger -lxml2 -lpthread -ldl /lib/x86_64-linux-gnu/libmbedcrypto.a</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../third_party/access_log.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../third_party/access_log.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/packing/packing.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/third_party.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="debug_funct_os.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="debug_funct_os.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dependency" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="epoll_serv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="epoll_serv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="evd_list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="evd_list.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="event.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="note" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="object_server.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="options.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="options.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_bzl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_bzl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_datyp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_obid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_obje.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_obje.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_reval.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_serv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_serv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_conf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_conf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/exceptio.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/exceptio.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_base.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_collect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_collect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_constr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_constr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_invoke.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_osev.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_osev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_query.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_query.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/finalize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/finalize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/hand_binary.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/hand_binary.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_base.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_collect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_collect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_constr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_constr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_invoke.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_osev.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_osev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_query.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_query.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initialize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initialize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/proce_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process_cycle.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process_cycle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="release" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sconfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="seion_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="seion_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="server_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="session.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="session.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="strz_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Noauth" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>4</developmentMode>
+          <incDir>
+            <pElem>../osev_sdkit/common</pElem>
+            <pElem>../osev_common</pElem>
+            <pElem>../third_party</pElem>
+            <pElem>../osev_sdkit/requ_interp</pElem>
+            <pElem>../osev_sdkit/chk_privile</pElem>
+            <pElem>../osev_sdkit/quer_contain</pElem>
+            <pElem>../osev_sdkit/run_status</pElem>
+            <pElem>../osev_sdkit/storage</pElem>
+            <pElem>../osev_sdkit/clas_compile</pElem>
+            <pElem>../osev_sdkit/authenize</pElem>
+            <pElem>../osev_sdkit/lvot_conte</pElem>
+            <pElem>../osev_sdkit/obje_invoke</pElem>
+            <pElem>../osev_sdkit/const_entity</pElem>
+            <pElem>../osev_sdkit/base_meta</pElem>
+            <pElem>../stora_engine</pElem>
+          </incDir>
+          <commandLine>-Wall -D_DEBUG -D_OSEV_SERV -D_LARGEFILE64_SOURCE -D_FILEOFFSET_BITS==64 -I/usr/include/libxml2 -fno-strict-aliasing -DNOAUTH</commandLine>
+        </cTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/osev_serv_t</output>
+          <commandLine>../osev_sdkit/dist/Noauth/GNU-Linux/libosev_sdkit.a ../third_party/packing/libpacking.a -lwiredtiger -lxml2 -lpthread -ldl /lib/x86_64-linux-gnu/libmbedcrypto.a</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="../third_party/access_log.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../third_party/access_log.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/packing/packing.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../third_party/third_party.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="debug_funct_os.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="debug_funct_os.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="dependency" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="epoll_serv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="epoll_serv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="evd_list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="evd_list.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="event.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="note" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="object_server.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="options.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="options.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_bzl.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_bzl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_datyp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_obid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_obje.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_obje.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_reval.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_serv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="osev_serv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="osev_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="parse_conf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="parse_conf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/exceptio.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/exceptio.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_base.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_collect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_collect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_constr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_constr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_invoke.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_osev.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_osev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/final_query.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/final_query.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/finalize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/finalize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/hand_binary.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/hand_binary.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_base.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_collect.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_collect.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_constr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_constr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_invoke.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_invoke.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_osev.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_osev.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_query.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_query.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initi_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initi_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/initialize.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process/initialize.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process/proce_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="process_cycle.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="process_cycle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="release" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sconfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="seion_utili.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="seion_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="server_macro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="session.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="session.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="strz_utili.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

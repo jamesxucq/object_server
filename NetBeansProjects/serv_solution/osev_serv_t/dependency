@@ -1,0 +1,19 @@
+// sudo apt-get install libmbedtls-dev
+sudo apt-get install libxml2-dev
+sudo apt-get install gcc
+// sudo apt-get install unzip
+
+sudo cp -arf ./osev_obid.h /usr/local/include/
+sudo cp -arf ./osev_reval.h /usr/local/include/
+sudo cp -arf ./strz_utili.h /usr/local/include/
+sudo cp -arf ./osev_datyp.h /usr/local/include/
+sudo cp -arf ./wiredtiger.h /usr/local/include/
+sudo cp -arf ./packing.h /usr/local/include/
+sudo cp -arf ./LVTPDefine.h /usr/local/include/
+
+sudo cp -arf ./libwiredtiger.so.11.3.0 /usr/local/lib/
+sudo cp -arf ./libpacking.so /usr/local/lib/
+sudo cp -arf ./libOSEVClieCPP.so /usr/local/lib/
+ldconfig
+
+cp -arf ./object_server.xml /opt/object_server/conf

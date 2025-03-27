@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjeServ Version="1.2.1">
+    <System>
+        <User Group="nobody">nobody</User>
+        <WorkerThreads>5</WorkerThreads>
+        <LockFile>/var/run/object_server.lock</LockFile>
+        <PidFile>/var/run/object_server.pid</PidFile>
+    </System>
+    <Server>
+        <DataDirectory>Default</DataDirectory>
+    </Server>
+    <Networking>
+        <Address>127.0.0.1</Address>
+        <Port>8848</Port>
+        <MaxConnecting>64</MaxConnecting>
+        <SessionTimeOut>3600</SessionTimeOut>
+    </Networking>
+    <LogConfig>
+        <RuntimeLog DebugLevel="MAX">/opt/object_server/logs/object_server.log</RuntimeLog>
+        <AccessLog>/opt/object_server/logs/osev_access.log</AccessLog>
+    </LogConfig>	
+</ObjeServ>

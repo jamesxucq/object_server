@@ -1,0 +1,372 @@
+
+#include "commo_header.h"
+#include "kcomm_header.h"
+
+#include "privi_code.h"
+#include "live_utili.h"
+
+#include "debug_funct_cp.h"
+#include "grant_revke.h"
+
+//
+
+int inse_role_cache(user_privi *uepriv, role_privi *ropriv) {
+    OSEVPF("[FUNC]:inse_role_cache\n");
+    role_privi **user_role = uepriv->ropriv;
+    int inde = 0x00;
+    for (; (MAX_ROLE_SIZE > inde) && user_role[0x00]; ++inde, ++user_role);
+    if (MAX_ROLE_SIZE == inde) return -1;
+    user_role[0x00] = ropriv;
+    //
+    return 0x00;
+}
+
+int inse_role_data(base_valu *baval, char *contn, osv_oid_t *user_oid, role_privi *ropriv) {
+    OSEVPF("[FUNC]:inse_role_data\n");
+    user_privi user_dat;
+    if (live_load((void *) &user_dat, baval, contn, user_oid))
+        return -1;
+    //
+    osv_oid_t *role_oid = user_dat.role_oid;
+    int inde = 0x00;
+    for (; (MAX_ROLE_SIZE > inde) && NOT_ZERO_OID(role_oid); ++inde, ++role_oid);
+    if (MAX_ROLE_SIZE == inde) return -1;
+    OID_BINCPY(role_oid, & ropriv->role_oid)
+            //
+    if (live_save(baval, contn, (char *) &user_dat, user_oid))
+        return -1;
+    //
+    return 0x00;
+}
+
+//
+
+static void redu_role_poin(role_privi **user_role, int posi) {
+    role_privi **role_inde = user_role + 0x01;
+    ++posi;
+    while ((MAX_ROLE_SIZE > posi) && role_inde[0x00]) {
+        user_role[0x00] = role_inde[0x00];
+        ++user_role;
+        ++role_inde;
+        ++posi;
+    }
+    //
+    memset(user_role, '\0', sizeof (role_privi *));
+}
+
+int dele_role_cache(user_privi *uepriv, role_privi *ropriv) {
+    OSEVPF("[FUNC]:dele_role_cache\n");
+    role_privi **user_role = uepriv->ropriv;
+    int inde = 0x00;
+    for (; (MAX_ROLE_SIZE > inde) && user_role[0x00]; ++inde, ++user_role) {
+        if (ropriv == user_role[0x00]) {
+            // user_role[0x00] = INVA_POIN_VALU;
+            redu_role_poin(user_role, inde);
+            return 0x00;
+        }
+    }
+    //
+    return -1;
+}
+
+static void redu_role_oide(osv_oid_t *role_oid, int posi) {
+    osv_oid_t *role_inde = role_oid + 0x01;
+    ++posi;
+    while ((MAX_ROLE_SIZE > posi) && NOT_ZERO_OID(role_oid)) {
+        OID_BINCPY(role_oid, role_inde);
+        ++role_oid;
+        ++role_inde;
+        ++posi;
+    }
+    // memset(role_oid, '\0', sizeof (osv_oid_t));
+    MAKE_OID_ZERO(role_oid)
+}
+
+int dele_role_data(base_valu *baval, char *contn, osv_oid_t *user_oid, role_privi *ropriv) {
+    OSEVPF("[FUNC]:dele_role_data\n");
+    user_privi user_dat;
+    if (live_load((void *) &user_dat, baval, contn, user_oid))
+        return -1;
+    //
+    osv_oid_t *role_oid = user_dat.role_oid;
+    int inde = 0x00;
+    for (; (MAX_ROLE_SIZE > inde) && NOT_ZERO_OID(role_oid); ++inde, ++role_oid) {
+        if (OSID_EQUALI(&ropriv->role_oid, role_oid)) {
+            redu_role_oide(role_oid, inde);
+            //
+            if (live_save(baval, contn, (char *) &user_dat, user_oid))
+                return -1;
+            return 0x00;
+        }
+    }
+    //   
+    return -1;
+}
+
+//
+
+int dins_priv_cache(role_privi *ropriv, dist_privi *priv_dist, uint32 lvmsk_code) {
+    OSEVPF("[FUNC]:dins_priv_cache\n");
+    dist_privi *priv_poin = ropriv->priv_array;
+    int inde = 0x00;
+    for (; MAX_PRIVI_SIZE > inde; ++inde, ++priv_poin) {
+        if (OID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            priv_poin->privile_code |= ((PRIVI_SCOPE_CODE | lvmsk_code) & priv_dist->privile_code);
+            return 0x00;
+        } else if (DIST_PRIVI_IS_ZERO(priv_poin)) {
+            OID_BINCPY(&priv_poin->dist_oid, &priv_dist->dist_oid)
+            priv_poin->privile_code = ((PRIVI_SCOPE_CODE | lvmsk_code) & priv_dist->privile_code);
+            return 0x00;
+        }
+    }
+    //
+    return -1;
+}
+
+int oins_priv_cache(role_privi *ropriv, dist_privi *priv_dist) {
+    OSEVPF("[FUNC]:oins_priv_cache\n");
+    dist_privi *priv_poin = ropriv->priv_array;
+    int inde = 0x00;
+    for (; MAX_PRIVI_SIZE > inde; ++inde, ++priv_poin) {
+        if (OID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            priv_poin->privile_code |= priv_dist->privile_code;
+            return 0x00;
+        } else if (DIST_PRIVI_IS_ZERO(priv_poin)) {
+            OID_BINCPY(&priv_poin->dist_oid, &priv_dist->dist_oid)
+            priv_poin->privile_code = priv_dist->privile_code;
+            return 0x00;
+        }
+    }
+    //
+    return -1;
+}
+
+int dins_priv_data(base_valu *baval, char *contn, osv_oid_t *role_oid, dist_privi *priv_dist) {
+    OSEVPF("[FUNC]:dins_priv_data\n");
+    role_privi role_dat;
+    if (live_load((void *) &role_dat, baval, contn, role_oid))
+        return -1;
+    //
+    dist_privi *priv_poin = role_dat.priv_array;
+    int inde = 0x00;
+    for (; MAX_PRIVI_SIZE > inde; ++inde, ++priv_poin) {
+        if (OID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            priv_poin->privile_code |= priv_dist->privile_code;
+            //
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        } else if (DIST_PRIVI_IS_ZERO(priv_poin)) {
+            OID_BINCPY(&priv_poin->dist_oid, &priv_dist->dist_oid)
+            priv_poin->privile_code = priv_dist->privile_code;
+            //
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        }
+    }
+    //
+    return -1;
+}
+
+//
+
+int oins_priv_data(base_valu *baval, char *contn, osv_oid_t *role_oid, dist_privi *priv_dist) {
+    OSEVPF("[FUNC]:oins_priv_data\n");
+    role_privi role_dat;
+    if (live_load((void *) &role_dat, baval, contn, role_oid))
+        return -1;
+    //
+    dist_privi *priv_poin = role_dat.priv_array;
+    int inde = 0x00;
+    for (; MAX_PRIVI_SIZE > inde; ++inde, ++priv_poin) {
+        if (OID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            priv_poin->privile_code |= priv_dist->privile_code;
+            //
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        } else if (DIST_PRIVI_IS_ZERO(priv_poin)) {
+            OID_BINCPY(&priv_poin->dist_oid, &priv_dist->dist_oid)
+            priv_poin->privile_code = priv_dist->privile_code;
+            //
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        }
+    }
+    //
+    return 0x00;
+}
+
+//
+
+static void redu_priv_data(dist_privi *priv_poin, int posi) {
+    OSEVPF("[FUNC]:redu_priv_data\n");
+    dist_privi *priv_inde = priv_poin + 0x01;
+    ++posi;
+    while ((MAX_PRIVI_SIZE > posi) && DIST_PRIVI_NOT_ZERO(priv_inde)) {
+        PRIV_BINCPY(priv_poin, priv_inde)
+                ++priv_poin;
+        ++priv_inde;
+        ++posi;
+    }
+    //
+    MAKE_PRIV_ZERO(priv_poin)
+}
+
+int ddel_priv_cache(role_privi *ropriv, dist_privi *priv_dist, uint32 lvmsk_code) {
+    OSEVPF("[FUNC]:ddel_priv_cache\n");
+    // OSEVPF("priv_dist->privile_code:|%08x| lvmsk_code:|%08x|\n", priv_dist->privile_code, lvmsk_code);
+    dist_privi *priv_poin = ropriv->priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            // OSEVPF("priv_poin->privile_code:|%08x|\n", priv_poin->privile_code);
+            priv_poin->privile_code &= (PRIVI_SCOPE_CODE | ~(lvmsk_code & priv_dist->privile_code));
+            // OSEVPF("priv_poin->privile_code:|%08x|\n", priv_poin->privile_code);
+            if (!PRIVI_VALUE(priv_poin->privile_code))
+                redu_priv_data(priv_poin, inde);
+            return 0x00;
+        }
+    }
+    // OSEVPF("[FUNC]:end ddel_priv_cache\n");
+    return -1;
+}
+
+int cdel_priv_cache(role_privi *ropriv, osv_oid_t *cont_oid) {
+    OSEVPF("[FUNC]:cdel_priv_cache\n");
+    dist_privi *priv_poin = ropriv->priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(cont_oid, &priv_poin->dist_oid)) {
+            redu_priv_data(priv_poin, inde);
+            return 0x00;
+        }
+    }
+    // OSEVPF("[FUNC]:end cdel_priv_cache\n");
+    return -1;
+}
+
+int bdel_priv_cache(role_privi *ropriv, osv_oid_t *base_oid) {
+    OSEVPF("[FUNC]:cdel_priv_cache\n");
+    dist_privi *priv_poin = ropriv->priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(base_oid, &priv_poin->dist_oid)) {
+            redu_priv_data(priv_poin, inde);
+            return 0x00;
+        }
+    }
+    // OSEVPF("[FUNC]:end cdel_priv_cache\n");
+    return -1;
+}
+
+int odel_priv_cache(role_privi *ropriv, dist_privi *priv_dist) {
+    OSEVPF("[FUNC]:odel_priv_cache\n");
+    dist_privi *priv_poin = ropriv->priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            priv_poin->privile_code &= (PRIVI_SCOPE_CODE | ~priv_dist->privile_code);
+            if (!PRIVI_VALUE(priv_poin->privile_code))
+                redu_priv_data(priv_poin, inde);
+            return 0x00;
+        }
+    }
+    // OSEVPF("[FUNC]:end odel_priv_cache\n");
+    return -1;
+}
+
+//
+
+int ddel_priv_data(base_valu *baval, char *contn, osv_oid_t *role_oid, dist_privi *priv_dist) {
+    OSEVPF("[FUNC]:ddel_priv_data\n");
+    role_privi role_dat;
+    if (live_load((void *) &role_dat, baval, contn, role_oid))
+        return -1;
+    //
+    dist_privi * priv_poin = role_dat.priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            priv_poin->privile_code &= (PRIVI_SCOPE_CODE | ~priv_dist->privile_code);
+            PRIN_dist_privi(priv_poin);
+            if (!PRIVI_VALUE(priv_poin->privile_code))
+                redu_priv_data(priv_poin, inde);
+            //
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        }
+    }
+    // OSEVPF("[FUNC]:end ddel_priv_data\n");
+    return -1;
+}
+
+int cdel_priv_data(base_valu *baval, char *contn, osv_oid_t *role_oid, osv_oid_t *cont_oid) {
+    OSEVPF("[FUNC]:cdel_priv_data\n");
+    role_privi role_dat;
+    if (live_load((void *) &role_dat, baval, contn, role_oid))
+        return -1;
+    //
+    dist_privi * priv_poin = role_dat.priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(cont_oid, &priv_poin->dist_oid)) {
+            redu_priv_data(priv_poin, inde);
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        }
+    }
+    // OSEVPF("[FUNC]:end ddel_priv_data\n");
+    return -1;
+}
+
+int bdel_priv_data(base_valu *baval, char *contn, osv_oid_t *role_oid, osv_oid_t *base_oid) {
+    OSEVPF("[FUNC]:bdel_priv_data\n");
+    role_privi role_dat;
+    if (live_load((void *) &role_dat, baval, contn, role_oid))
+        return -1;
+    //
+    dist_privi * priv_poin = role_dat.priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(base_oid, &priv_poin->dist_oid)) {
+            redu_priv_data(priv_poin, inde);
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        }
+    }
+    // OSEVPF("[FUNC]:end ddel_priv_data\n");
+    return -1;
+}
+
+//
+
+int odel_priv_data(base_valu *baval, char *contn, osv_oid_t *role_oid, dist_privi *priv_dist) {
+    OSEVPF("[FUNC]:odel_priv_data\n");
+    role_privi role_dat;
+    if (live_load((void *) &role_dat, baval, contn, role_oid))
+        return -1;
+    //
+    dist_privi * priv_poin = role_dat.priv_array;
+    int inde = 0x00;
+    for (; (MAX_PRIVI_SIZE > inde) && DIST_PRIVI_NOT_ZERO(priv_poin); ++inde, ++priv_poin) {
+        if (OSID_EQUALI(&priv_dist->dist_oid, &priv_poin->dist_oid)) {
+            priv_poin->privile_code &= (PRIVI_SCOPE_CODE | ~priv_dist->privile_code);
+            if (!PRIVI_VALUE(priv_poin->privile_code))
+                redu_priv_data(priv_poin, inde);
+            //
+            if (live_save(baval, contn, (char *) &role_dat, role_oid))
+                return -1;
+            return 0x00;
+        }
+    }
+    //OSEVPF("[FUNC]:end odel_priv_data\n");
+    return -1;
+}
+
+

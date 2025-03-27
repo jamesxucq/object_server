@@ -1,0 +1,228 @@
+
+#include "commo_header.h"
+#include "kcomm_header.h"
+#include "cqutili.h"
+#include "quer_utili.h"
+#include "qstri_utili.h"
+#include "lev2_meta.h"
+
+#include "debug_funct_co.h"
+#include "facto_conta_co.h"
+#include "debug_funct_qc.h"
+#include "kcomm_struct.h"
+
+//
+
+int condit_oconta_co(prod_data *sresp, rive_conne *rivcon, contain *dcont, contain **sconp, hand_hmap *hando, lev2me **lv2mep, char *condi) {
+    OSEVPF("[FUNC]:condit_oconta_co\n");
+    oper_node *synt_head;
+    char erro_msg[LINE_LENGTH];
+    if (build_query_synta(&synt_head, erro_msg, condi)) {
+        OSEVPF("condit_oconta_si: %s\n", erro_msg);
+        return -1;
+    }
+    //
+    OSEVPF("creat_facto_plan_coulti\n");
+    plan_node_co *querpn = CREAT_PLAN_NODE_CO(PLAN_ITEM_SZIE);
+    if (!querpn) return -1;
+    if (creat_fconq_plan_co(querpn, sresp, dcont, sconp, lv2mep, synt_head)) {
+        DESTR_PLAN_NODE_CO(querpn);
+        DESTROY_STREE(synt_head);
+        return -1;
+    }
+    DESTROY_STREE(synt_head);
+    PRIN_plan_node_co(querpn);
+    // physical
+    int facto_valu = ephys_facto_conta_co(querpn, rivcon, dcont->stora_ha, hando, lv2mep);
+    DESTR_PLAN_NODE_CO(querpn);
+    return facto_valu;
+}
+
+//
+
+int objeid_oconta_co(prod_data *sresp, rive_conne *rivcon, contain *dcont, contain **sconp, lev2me **lv2mep, osv_oid_i *obje_oid) {
+    OSEVPF("[FUNC]:objeid_oconta_co\n");
+    field_resul_co fires;
+    if (fires_lev2n_item_co(&fires, lv2mep))
+        return -1;
+    PRIN_field_resul_co(&fires);
+    uint64 obje_valu;
+    //
+    rive_ha *stora_ha = sconp[0x00]->stora_ha;
+    riv_curso_t *dcurso, *scurso1, *scurso2;
+    seio_list *slist = ACTIV_SEION_BZL(rivcon, stora_ha);
+    if (!slist) return -1;
+    if (stora_ha->open_field(&scurso1, slist->seion, sconp[0x00]->cont_name, fires.fiestr1, "raw")) {
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    if (stora_ha->open_field(&scurso2, slist->seion, sconp[0x01]->cont_name, fires.fiestr2, "raw")) {
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    if (stora_ha->open_table(&dcurso, slist->seion, dcont->cont_name, "raw")) {
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    //
+    if (INSTAN_UNIQUE != obje_oid[0x00].osev_unique) {
+        stora_ha->close_curso(dcurso);
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    if (INSTAN_UNIQUE != obje_oid[0x01].osev_unique) {
+        stora_ha->close_curso(dcurso);
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    //
+    PK_ITEM svalu1, svalu2;
+    stora_ha->set_psid_key(scurso1, (uint64 *) & obje_oid[0x00].stoid);
+    if (0x00 != stora_ha->sear_curso(scurso1)) {
+        stora_ha->close_curso(dcurso);
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    stora_ha->get_value(scurso1, &svalu1);
+    stora_ha->set_psid_key(scurso2, (uint64 *) & obje_oid[0x01].stoid);
+    if (0x00 != stora_ha->sear_curso(scurso2)) {
+        stora_ha->close_curso(dcurso);
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    stora_ha->get_value(scurso2, &svalu2);
+    //
+    dyli_data *dylid = lv2mep[0x00]->dylid;
+    osv_sid_t deske_sid;
+    creat_objec_side((osv_sid_t *) & deske_sid);
+    stora_ha->set_psid_key(dcurso, (uint64 *) & deske_sid);
+    PK_ITEM desva;
+    desva.data = (void *) malloc(dylid->data_size);
+    if (!desva.data) {
+        stora_ha->close_curso(dcurso);
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    desva.size = dylid->data_size;
+    fires.build_proje_objec_do(&desva, &obje_valu, &svalu1, &svalu2, &fires);
+    stora_ha->set_value(dcurso, &desva);
+    if (stora_ha->inser_curso(dcurso)) {
+        free((void *) desva.data);
+        stora_ha->close_curso(dcurso);
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    rewind(sresp->sedat);
+    (sresp->colen)[0x00] = 0x00;
+    //
+    free((void *) desva.data);
+    stora_ha->close_curso(dcurso);
+    stora_ha->close_curso(scurso2);
+    stora_ha->close_curso(scurso1);
+    QUIET_SEION_BZL(rivcon, stora_ha, slist);
+    return 0x00;
+}
+
+//
+
+static int trave_secon_curso(riv_curso_t *dcurso, PK_ITEM *desva, PK_ITEM *svalu1, riv_curso_t *scurso2, field_resul_co *fires, rive_ha *stora_ha) {
+    uint64 obje_valu;
+    PK_ITEM svalu2;
+    osv_sid_t deske_sid;
+    stora_ha->reset_curso(scurso2);
+    while (0x00 == stora_ha->next_curso(scurso2)) {
+        // OSEVPF("wt_next_curs\n");
+        stora_ha->get_value(scurso2, &svalu2);
+        creat_objec_side((osv_sid_t *) & deske_sid);
+        stora_ha->set_psid_key(dcurso, (uint64 *) & deske_sid);
+        fires->build_proje_objec_do(desva, &obje_valu, svalu1, &svalu2, fires);
+        stora_ha->set_value(dcurso, &desva);
+        if (stora_ha->inser_curso(dcurso)) {
+            return -1;
+        }
+        // log_binary_file(key_memo, dylid->data_size, "./binary_code.bin_f");
+    }
+    //
+    return 0x00;
+}
+
+//
+
+int traver_oconta_co(prod_data *sresp, rive_conne *rivcon, contain *dcont, contain **sconp, lev2me **lv2mep) {
+    OSEVPF("[FUNC]:traver_oconta_co\n");
+    field_resul_co fires;
+    if (fires_lev2n_type_co(&fires, lv2mep))
+        return -1;
+    PRIN_field_resul_co(&fires);
+    //
+    rive_ha *stora_ha = sconp[0x00]->stora_ha;
+    riv_curso_t *dcurso, *scurso1, *scurso2;
+    seio_list *slist = ACTIV_SEION_BZL(rivcon, stora_ha);
+    if (!slist) return -1;
+    if (stora_ha->open_field(&scurso1, slist->seion, sconp[0x00]->cont_name, fires.fiestr1, "raw")) {
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    if (stora_ha->open_field(&scurso2, slist->seion, sconp[0x01]->cont_name, fires.fiestr2, "raw")) {
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    if (stora_ha->open_table(&dcurso, slist->seion, dcont->cont_name, "raw")) {
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    //
+    dyli_data *dylid = lv2mep[0x00]->dylid;
+    PK_ITEM desva, svalu1;
+    desva.data = (void *) malloc(dylid->data_size);
+    if (!desva.data) {
+        stora_ha->close_curso(dcurso);
+        stora_ha->close_curso(scurso2);
+        stora_ha->close_curso(scurso1);
+        QUIET_SEION_BZL(rivcon, stora_ha, slist);
+        return -1;
+    }
+    desva.size = dylid->data_size;
+    while (0x00 == stora_ha->next_curso(scurso1)) {
+        // OSEVPF("wt_next_curs\n");
+        stora_ha->get_value(scurso1, &svalu1);
+        if (trave_secon_curso(dcurso, &desva, &svalu1, scurso2, &fires, stora_ha)) {
+            free((void *) desva.data);
+            stora_ha->close_curso(dcurso);
+            stora_ha->close_curso(scurso2);
+            stora_ha->close_curso(scurso1);
+            QUIET_SEION_BZL(rivcon, stora_ha, slist);
+            return -1;
+        }
+        // log_binary_file(obje_data, dylid->data_size, "./binary_code.bin_f");
+    }
+    rewind(sresp->sedat);
+    (sresp->colen)[0x00] = 0x00;
+    OSEVPF("(sresp->colen)[0x00]:%llu\n", (sresp->colen)[0x00]);
+    free((void *) desva.data);
+    stora_ha->close_curso(dcurso);
+    stora_ha->close_curso(scurso2);
+    stora_ha->close_curso(scurso1);
+    QUIET_SEION_BZL(rivcon, stora_ha, slist);
+    return 0x00;
+}
+
+
