@@ -1,0 +1,426 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Object Server开发人员说明书</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+line-height:115%;text-autospace:none'><b><span style='font-size:11.0pt;
+line-height:115%;font-family:宋体'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:10.0pt;text-align:center;
+line-height:115%;text-autospace:none'><b><span style='font-size:11.0pt;
+line-height:115%;font-family:宋体'>Object Server开发人员说明书</span></b></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>一.样例数据库搭建</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; 运行后面的例子时不要复制粘贴.编码不一样.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>1.ObjectServer安装完成后,执行以下命令启动ObjectServer服务器:</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp;
+james@ubuntu:~$/opt/object_server/bin/osev_serv_noau</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>osev_serv_noau为没有权限模块的测试版,在前台运行需要占用一个控制台.osev_serv_t是发行版,后台运行.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>2.服务器启动完成后,执行以下命令启动ObjectServer客户端:</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp;
+james@ubuntu:~$/opt/object_server/bin/osev-cli</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>客户端输入状态下按方向键上下可以翻看输入历史.运行后面的例子时不要复制粘贴.编码不一样.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>3.客户端执行以下命令,连接服务器.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; clie: conne
+osvp://127.0.0.1:8848/?uname=xman&amp;paswd=*****</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>注意修改相应的服务器ip,用户名和密码.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>4.客户端执行command对象的open方法,打开earth数据库.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; osev: command:open(earth);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>如果earth数据库存在就打开,不存在就创建.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>执行以下对象的方法,进入earth数据库.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; osev: clie:use(earth, dev1, 123abc);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>数据库连接成功后提示符变成&quot;odb-lv4p&gt; &quot;,说明已经成功进入earth数据库的第四层空间.执行clie:level方法进入数据库的其他层空间.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; odb-lv4p&gt; clie:level(2p);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>用上面的方法进入数据库二层空间,输入下面的txxt类定义,在数据库中声明txxt这个类.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; odb-lv2p&gt; txxt&lt;[xx int32, ax
+int32, cx int32], tpp(cx, ax, xx)&gt;;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>执行clie:level方法进入txxt类的一层空间.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; odb-lv2p&gt; clie:level(txxt);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>输入下面的txxt:tpp方法的定义,在数据库中声明txxt:tpp这个方法.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; olv1.txxt&gt; :tpp&lt;(xo int32, ao
+int32)int32, (ci int32, ai int32, xi int32)&gt; {xi = xo; ai = ao; return ci;}</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>把客户端切换到数据库第四层空间.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; olv1.txxt&gt; clie:level(4p);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>以下调用在数据库中创建&quot;txxt_con&quot;这个容器.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; odb-lv4p&gt;
+witi:witi(&quot;txxt_con&quot;, &quot;txxt&quot;);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>执行clie:level方法进入txxt_con的三层空间.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; odb-lv4p&gt; clie:level(txxt_con);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>在txxt_con这个容器中创建三个对象,输入如下:</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; txxt_con-lev3&gt; txxt:txxt(155,100,222);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; txxt_con-lev3&gt;
+txxt:txxt(166,210,322);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; txxt_con-lev3&gt;
+txxt:txxt(366,410,522);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>执行以下调用,查看创建的对象</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; txxt_con-lev3&gt; :search() |
+kits:pretty(&quot;oiii&quot;);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>二.cplusplus样例说明</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>1.简要说明</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; 在源码仓这个地址:
+NetBeansProjects/client/cplusplus/Example可以看到一些netbeans的工程,他们分别介绍了cpp怎么和ObjectServer进行对象增删改查询的.如果没有安装netbeans,可以进入工程目录make编译.之后进入./dist/Debug/GNU-Linux这个目录是示例可执行文件.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>2.从数据库导出类的声明和定义,给cpp程序使用.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; 进入数据库二层空间.下面的调用在本地目录生成txxt类的方法的定义.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; odb-lv2p&gt; kits:list(txxt, LEVO,
+FORCED) | kits:translate(GCC) | kits:save(txxt.cpp);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; 下面的调用在本地目录生成txxt类的方法的定义.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; odb-lv2p&gt; kits:list(txxt, LVTP,
+FORCED) | kits:translate(GCC) | kits:save(txxt.h);</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>3.本地目录结构和文件的介绍</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp;
+NetBeansProjects/client/cplusplus/Example这目录放的cpp示例文件,此目录下的earth_lv2p目录是earth这个数据库的class类文件定义</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>txxt.cpp ,txxt.h这两个文件是txxt类的cpp定义.EarthLvtpHeader.h这个文件是cpp编译的一些功能选项和头文件声明的集合.</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; 功能选项解释如下:</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #ifndef CHECK_ATTRIBU_DECLARE</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #define CHECK_ATTRIBU_DECLARE</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>系统自动检测服务器端类定义变更的频率</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>启用_CHECK_VERSION_INTERVAL和_CHECK_ATTRIBU_INTERVAL需使用这个宏</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #define CHECK_ATTRIBU_FREQUENCY&nbsp;&nbsp;
+(1024-1) // 2^10-1</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>下面的宏是五种检测服务器类变化方式选项</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>check server and local lv2p attribute: version, external</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>每次都检测类版本的变化</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #define _CHECK_VERSION_EVERYTIME</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>按上面的频率检测类版本的变化</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #define _CHECK_VERSION_INTERVAL //
+interval</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>每次都检测类版本和外联属性的变化</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #define _CHECK_ATTRIBU_EVERYTIME</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>按上面的频率检测类版本的变化和外联属性</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #define _CHECK_ATTRIBU_INTERVAL //
+interval</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>不检测类版本的变化和外联属性</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;&nbsp;&nbsp; #define _DONOT_CHECK_ATTRIBU</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>三.java样例说明</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>四.python样例说明</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:10.0pt;text-align:left;
+line-height:115%;text-autospace:none'><span style='font-size:11.0pt;line-height:
+115%;font-family:宋体'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
